@@ -6,7 +6,6 @@ using UnityEngine;
 public class CharacterAttributes : ScriptableObject {
 
     public int MaxHealth;
-    public int CurrHealth;
 
     public float Speed;
     public float JumpForce;

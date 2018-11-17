@@ -12,22 +12,17 @@ public class Character : MonoBehaviour
     private CharacterAttributes _attribute;
     [SerializeField]
     private OnDeath _onDeath = new OnDeath();
+    [SerializeField]
+    private int _currHealth = 0;
 
     #endregion
 
 
     #region Unity
 
-    // Use this for initialization
-    void Start()
+    private void Start()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        _currHealth = _attribute.MaxHealth;
     }
 
     #endregion
@@ -39,11 +34,11 @@ public class Character : MonoBehaviour
 
     public void ApplyProjectile(Projectile proj)
     {
-        _attribute.CurrHealth -= proj.Attribute.Damage;
-        if (_attribute.CurrHealth <= 0)
+        _currHealth -= proj.Attribute.Damage;
+        if (_currHealth <= 0)
         {
             _onDeath.Invoke();
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 

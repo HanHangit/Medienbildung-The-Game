@@ -36,6 +36,7 @@ GameObject:
   - component: {fileID: 4077110507756712}
   - component: {fileID: 212001742900230338}
   - component: {fileID: 114847225690955570}
+  - component: {fileID: 114168735587656290}
   - component: {fileID: 50358207846726202}
   - component: {fileID: 61902021028615044}
   m_Layer: 0
@@ -98,7 +99,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1536168160288526}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.52, y: 0.82, z: 0}
+  m_LocalPosition: {x: -1.67, y: -0.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4053162406109968}
@@ -212,6 +213,18 @@ MonoBehaviour:
       Data: 2
   _shootLeft: {fileID: 1125378011652502}
   _shootRight: {fileID: 1613981564955930}
+--- !u!114 &114168735587656290
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1536168160288526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a43342187b8c114ca604537c69fedae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attribute: {fileID: 11400000, guid: 38ae57ced88d44440936a1381d355e3b, type: 2}
 --- !u!114 &114478269236750014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -261,8 +274,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  _speed: 300
-  _jumpForce: 800
+  _character: {fileID: 114168735587656290}
   _rgbd: {fileID: 50358207846726202}
 --- !u!212 &212001742900230338
 SpriteRenderer:
