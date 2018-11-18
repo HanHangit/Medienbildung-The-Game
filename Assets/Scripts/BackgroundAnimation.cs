@@ -19,14 +19,24 @@ public class BackgroundAnimation : MonoBehaviour {
 
     [SerializeField]
     private TextMeshProUGUI[] _text;
+    [SerializeField]
+    private bool _onStart = true;
 
     private void Start()
     {
         _curTime = 0;
     }
 
+    public void Activate()
+    {
+        _onStart = true;
+    }
+
     private void Update()
     {
+        if (!_onStart)
+            return;
+
         _curTime += Time.deltaTime;
 
         float t = _curTime / _circleTime;
