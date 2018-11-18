@@ -14,7 +14,6 @@ public class Weapon : MonoBehaviour {
 
     public void Shoot(Vector2 pos, Vector2 dir)
     {
-        Debug.Log("Shoot");
         if(CanShoot)
         {
             _currTime = 0;
