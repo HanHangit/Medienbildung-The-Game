@@ -1,18 +1,15 @@
-﻿using Sirenix.OdinInspector;
-using Sirenix.Serialization;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : SerializedMonoBehaviour {
+public class Projectile : MonoBehaviour {
 
     #region Variables
 
     private float _speed;
     private Vector2 _dir;
     private Rigidbody2D _rgbd;
-    [Required]
-    [OdinSerialize]
+    [SerializeField]
     private ProjectileAttribute _attribute;
 
     #endregion

@@ -1,24 +1,18 @@
-﻿using Sirenix.OdinInspector;
-using Sirenix.Serialization;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMovement : SerializedMonoBehaviour
+public class EnemyMovement : MonoBehaviour
 {
 
     #region Variables
 
     [SerializeField]
-    [Required]
     Character _character;
 
-    [Required]
     [SerializeField]
     private Rigidbody2D _rgbd = null;
-
-    [Required]
-    [OdinSerialize]
+    [SerializeField]
     private KIController _controller = null;
 
     private Vector2 _lookDir = Vector2.zero;

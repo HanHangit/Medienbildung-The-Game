@@ -1,15 +1,12 @@
-﻿using Sirenix.OdinInspector;
-using Sirenix.Serialization;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInventory : SerializedMonoBehaviour   {
+public class PlayerInventory : MonoBehaviour   {
 
     #region Variables
 
-    [Required]
-    [OdinSerialize]
+    [SerializeField]
     private PlayerMovement _controller;
 
     [SerializeField]
@@ -17,6 +14,10 @@ public class PlayerInventory : SerializedMonoBehaviour   {
     [SerializeField]
     private GameObject _shootRight;
 
+    [SerializeField]
+    private Weapon _weapon;
+    [SerializeField]
+    private Utility _utility;
     #endregion
 
 
@@ -25,7 +26,9 @@ public class PlayerInventory : SerializedMonoBehaviour   {
     private void Update()
     {
         if (_controller.Controller.IsAction1() && _shootLeft && _shootRight)
+        {
             Weapon?.Shoot(_controller.LookDir.x > 0 ? _shootRight.transform.position : _shootLeft.transform.position, _controller.LookDir);
+        }
         if (_controller.Controller.IsAction2())
             Utility?.Use();
     }
@@ -35,11 +38,9 @@ public class PlayerInventory : SerializedMonoBehaviour   {
 
     #region Public
 
-    [OdinSerialize]
-    public Utility Utility { get; set; }
+    public Utility Utility => _utility;
 
-    [OdinSerialize]
-    public Weapon Weapon { get; set; } 
+    public Weapon Weapon => _weapon;
 
     #endregion
 }
