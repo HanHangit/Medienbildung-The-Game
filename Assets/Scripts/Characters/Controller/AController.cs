@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class AController
+public abstract class AController : MonoBehaviour
 {
     public abstract Vector2 GetMove();
     public abstract bool IsJump();

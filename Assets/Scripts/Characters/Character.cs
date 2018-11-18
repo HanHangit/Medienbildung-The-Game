@@ -12,7 +12,6 @@ public class Character : MonoBehaviour
     private CharacterAttributes _attribute;
     [SerializeField]
     private OnDeath _onDeath = new OnDeath();
-    [SerializeField]
     private int _currHealth = 0;
 
     #endregion

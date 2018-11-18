@@ -1,15 +1,12 @@
-﻿using Sirenix.OdinInspector;
-using Sirenix.Serialization;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInventory : SerializedMonoBehaviour   {
+public class PlayerInventory : MonoBehaviour   {
 
     #region Variables
 
-    [Required]
-    [OdinSerialize]
+    [SerializeField]
     private PlayerMovement _controller;
 
     [SerializeField]
@@ -35,10 +32,10 @@ public class PlayerInventory : SerializedMonoBehaviour   {
 
     #region Public
 
-    [OdinSerialize]
+    [SerializeField]
     public Utility Utility { get; set; }
 
-    [OdinSerialize]
+    [SerializeField]
     public Weapon Weapon { get; set; } 
 
     #endregion
