@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.SceneManagement;
 
 public class BackgroundStart : MonoBehaviour {
 
@@ -13,6 +14,9 @@ public class BackgroundStart : MonoBehaviour {
 
     [SerializeField]
     private FadeText _fadeText;
+
+    [SerializeField]
+    private SceneRef _sceneName;
 
     private void Start()
     {
@@ -31,5 +35,19 @@ public class BackgroundStart : MonoBehaviour {
     private void FadingTextCompleted(GameObject arg0)
     {
         Instantiate(_settings, this.transform);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            SceneManager.LoadScene(_sceneName.GetSceneName());
+        }
+        else if (Input.GetKeyDown(KeyCode.A))
+        {
+            SceneManager.LoadScene(_sceneName.GetSceneName());
+        }
+
+
     }
 }

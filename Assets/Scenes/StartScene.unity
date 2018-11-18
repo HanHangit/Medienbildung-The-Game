@@ -364,6 +364,7 @@ MonoBehaviour:
   _settings: {fileID: 114926773949073214, guid: b692f473de402904a883752bf2a21cee,
     type: 2}
   _fadeText: {fileID: 2143311323}
+  _sceneName: {fileID: 11400000, guid: eedfb1c82aae1204cbd9a205fd9b6d29, type: 2}
 --- !u!1 &1092037101
 GameObject:
   m_ObjectHideFlags: 0

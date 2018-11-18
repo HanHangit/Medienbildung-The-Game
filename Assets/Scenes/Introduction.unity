@@ -361,6 +361,7 @@ MonoBehaviour:
   _actionTimer: 2
   _continueText: {fileID: 1796345175}
   _skipText: {fileID: 993827646}
+  _sceneName: {fileID: 11400000, guid: ddf3e1af3741d9143ac869f06319aaac, type: 2}
 --- !u!1 &993827644
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,8 +581,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 16777215
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
@@ -782,8 +783,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.5
-      value: 1
+      time: 0.20129395
+      value: 0.996212
       inSlope: 0.009415671
       outSlope: 0.009415671
       tangentMode: 0
@@ -802,7 +803,7 @@ MonoBehaviour:
     m_PreInfinity: 1
     m_PostInfinity: 1
     m_RotationOrder: 4
-  _circleTime: 3
+  _circleTime: 5
   _minAlpha: 0
   _maxAlpha: 1
   _text:

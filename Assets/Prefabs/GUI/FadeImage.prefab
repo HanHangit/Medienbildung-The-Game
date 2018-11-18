@@ -42,39 +42,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fadeImage: {fileID: 114945908020777648}
   _rootObj: {fileID: 1033730901879088}
-  _time: 1
+  _time: 2
   _alphaCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      value: 0.9962158
+      inSlope: -0.31442058
+      outSlope: -0.31442058
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.5
-      value: 1
-      inSlope: 0.009415671
-      outSlope: 0.009415671
+      time: 0.93579006
+      value: 0.70198417
+      inSlope: -1
+      outSlope: -1
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      value: -0.0037841797
+      inSlope: -10.991575
+      outSlope: -10.991575
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
-    m_PreInfinity: 1
-    m_PostInfinity: 1
+    m_PreInfinity: 2
+    m_PostInfinity: 2
     m_RotationOrder: 4
 --- !u!114 &114945908020777648
 MonoBehaviour:

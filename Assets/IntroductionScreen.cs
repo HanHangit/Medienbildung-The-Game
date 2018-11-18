@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class IntroductionScreen : MonoBehaviour {
 
@@ -16,6 +17,9 @@ public class IntroductionScreen : MonoBehaviour {
     [SerializeField]
     private TextMeshProUGUI _skipText;
 
+    [SerializeField]
+    private SceneRef _sceneName;
+
     private float _curTimer = 0;
     private int _curIndex = 0;
     private bool _finishedInit = false;
@@ -27,7 +31,7 @@ public class IntroductionScreen : MonoBehaviour {
     }
     private void Update()
     {
-        if(_textMesh.color.a >= 0.9f && !_finishedInit)
+        if(_textMesh.color.a >= 0.95f && !_finishedInit)
         {
             _continueText.gameObject.SetActive(true);
             _continueText.gameObject.GetComponent<BackgroundAnimation>().Activate();
@@ -49,8 +53,11 @@ public class IntroductionScreen : MonoBehaviour {
             {
                 _curTimer = 0;
                 _curIndex++;
-     
-                _textMesh.text = _text[_curIndex];
+
+                if(_curIndex >= _text.Count)
+                    SceneManager.LoadScene(_sceneName.GetSceneName());
+                else
+                    _textMesh.text = _text[_curIndex];
             }
         }
     }
