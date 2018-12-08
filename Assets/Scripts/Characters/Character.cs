@@ -31,14 +31,19 @@ public class Character : MonoBehaviour
 
     public CharacterAttributes Attribute => _attribute;
 
-    public void ApplyProjectile(Projectile proj)
+    public void ApplyDamage(int dmg)
     {
-        _currHealth -= proj.Attribute.Damage;
+        _currHealth -= dmg;
         if (_currHealth <= 0)
         {
             _onDeath.Invoke();
             Destroy(gameObject);
         }
+    }
+
+    public void ApplyProjectile(Projectile proj)
+    {
+        ApplyDamage(proj.Attribute.Damage);
     }
 
     #endregion

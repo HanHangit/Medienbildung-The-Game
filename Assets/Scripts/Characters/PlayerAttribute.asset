@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: PlayerAttribute
   m_EditorClassIdentifier: 
   MaxHealth: 100
-  Speed: 300
-  JumpForce: 800
+  Speed: 400
+  JumpForce: 1200
