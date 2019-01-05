@@ -42,12 +42,12 @@ public class BackgroundStart : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.D))
         {
             SceneManager.LoadScene(_sceneName.GetSceneName());
+            PlayerPrefs.SetInt("Player", 0);
         }
         else if (Input.GetKeyDown(KeyCode.A))
         {
             SceneManager.LoadScene(_sceneName.GetSceneName());
+            PlayerPrefs.SetInt("Player", 1);
         }
-
-
     }
 }

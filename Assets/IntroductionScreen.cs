@@ -28,6 +28,8 @@ public class IntroductionScreen : MonoBehaviour {
     {
         _continueText.gameObject.SetActive(false);
         _skipText.gameObject.SetActive(false);
+        Debug.Log("Fixe: "  + PlayerPrefs.GetInt("Player").ToString());
+
     }
     private void Update()
     {
@@ -43,7 +45,7 @@ public class IntroductionScreen : MonoBehaviour {
             return;
 
         if (Input.GetKeyDown(KeyCode.E))
-            Debug.Log("SceneLoad with E");
+            SceneManager.LoadScene(_sceneName.GetSceneName());
 
         _curTimer += Time.deltaTime;
 

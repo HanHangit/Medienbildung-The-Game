@@ -361,7 +361,7 @@ MonoBehaviour:
   _actionTimer: 2
   _continueText: {fileID: 1796345175}
   _skipText: {fileID: 993827646}
-  _sceneName: {fileID: 11400000, guid: ddf3e1af3741d9143ac869f06319aaac, type: 2}
+  _sceneName: {fileID: 11400000, guid: 964ff5331119e0d4eaebcc2667581d42, type: 2}
 --- !u!1 &993827644
 GameObject:
   m_ObjectHideFlags: 0
