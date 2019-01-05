@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: BirknerAttribute
   m_EditorClassIdentifier: 
   MaxHealth: 10
-  Speed: 150
+  Speed: 300
   JumpForce: 0
