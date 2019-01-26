@@ -23,6 +23,7 @@ public class Character : MonoBehaviour
     private void Start()
     {
         _currHealth = _attribute.MaxHealth;
+        GameManager.Instance.PlayerRegistered(this);
     }
 
     #endregion
