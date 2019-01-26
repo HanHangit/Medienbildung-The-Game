@@ -40,9 +40,10 @@ GameObject:
   - component: {fileID: 114168735587656290}
   - component: {fileID: 50358207846726202}
   - component: {fileID: 61902021028615044}
+  - component: {fileID: 114638259775557822}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -235,6 +236,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4842ac499ea8e48917c85c18aa0e26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114638259775557822
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1536168160288526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8250f2f1a22b967459ef6891c3920f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onCollision:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114638259775557822}
+        m_MethodName: ApplyDamage
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: CollisionHandler+OnCollision2D, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114658044637662680
 MonoBehaviour:
   m_ObjectHideFlags: 1
