@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// WARUM KEIN INTERFACE!?
 public abstract class AController : MonoBehaviour
 {
     public abstract Vector2 GetMove();

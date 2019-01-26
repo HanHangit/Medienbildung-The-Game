@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,6 +15,15 @@ public class EnemyMovement : MonoBehaviour
     private Rigidbody2D _rgbd = null;
     [SerializeField]
     private AController _controller = null;
+
+    internal void IncreseVelocity(float value)
+    {
+        _rgbd.velocity = new Vector2(_rgbd.velocity.x + value, _rgbd.velocity.y);
+    }
+    public void ResetVelocity()
+    {
+        _rgbd.velocity = Vector2.zero;
+    }
 
     private Vector2 _lookDir = Vector2.left;
 
