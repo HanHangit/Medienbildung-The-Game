@@ -9,4 +9,6 @@ public abstract class AController : MonoBehaviour
     public abstract bool IsJump();
     public abstract bool IsAction1();
     public abstract bool IsAction2();
+    public virtual void Init() { }
+    public virtual void OnCollision(GameObject obj, Collision2D collision) { }
 }

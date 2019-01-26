@@ -19,10 +19,6 @@ public class Projectile : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Character comp = null;
-        if(collision.gameObject.tag  == "Enemy" && (comp = collision.gameObject.GetComponent<Character>()))
-            comp.ApplyProjectile(this);
-
         Destroy(gameObject);
     }
 

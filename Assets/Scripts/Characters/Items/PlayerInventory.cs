@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInventory : MonoBehaviour   {
+public class PlayerInventory : MonoBehaviour
+{
 
     #region Variables
 
@@ -25,12 +26,15 @@ public class PlayerInventory : MonoBehaviour   {
 
     private void Update()
     {
-        if (_controller.Controller.IsAction1() && _shootLeft && _shootRight)
+        if (_controller)
         {
-            Weapon?.Shoot(_controller.LookDir.x > 0 ? _shootRight.transform.position : _shootLeft.transform.position, _controller.LookDir);
+            if (_controller.Controller.IsAction1() && _shootLeft && _shootRight)
+            {
+                Weapon?.Shoot(_controller.LookDir.x > 0 ? _shootRight.transform.position : _shootLeft.transform.position, _controller.LookDir);
+            }
+            if (_controller.Controller.IsAction2())
+                Utility?.Use();
         }
-        if (_controller.Controller.IsAction2())
-            Utility?.Use();
     }
 
     #endregion

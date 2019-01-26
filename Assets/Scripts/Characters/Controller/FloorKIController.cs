@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KIController : AController
+public class FloorKIController : AController
 {
 
     #region Variables
@@ -19,7 +19,7 @@ public class KIController : AController
         return _currMove;
     }
 
-    public void Init()
+    public override void Init()
     {
          _currMove = new Vector2(Random.Range(-10, 10), 0);
         _currMove.Normalize();
@@ -40,7 +40,7 @@ public class KIController : AController
         return false;
     }
 
-    public virtual void OnCollision(GameObject obj, Collision2D collision)
+    public override void OnCollision(GameObject obj, Collision2D collision)
     {
         if (Mathf.Abs(collision.gameObject.transform.position.y - obj.transform.position.y) < obj.GetComponent<SpriteRenderer>().bounds.size.y
             && collision.gameObject.tag == "Obstacle")

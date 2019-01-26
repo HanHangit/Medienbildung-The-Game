@@ -99,19 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c970a360a3d01454c8b4f82593103458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 11400000, guid: a0d821637a922a64abbef9c020cceb08, type: 2}
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes:
-    - Name: _attribute
-      Entry: 10
-      Data: 0
+  _attribute: {fileID: 11400000, guid: a0d821637a922a64abbef9c020cceb08, type: 2}
 --- !u!212 &212047299876805182
 SpriteRenderer:
   m_ObjectHideFlags: 1

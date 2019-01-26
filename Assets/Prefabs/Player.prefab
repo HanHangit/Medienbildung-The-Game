@@ -36,6 +36,7 @@ GameObject:
   - component: {fileID: 4077110507756712}
   - component: {fileID: 212001742900230338}
   - component: {fileID: 114847225690955570}
+  - component: {fileID: 114093646578923186}
   - component: {fileID: 114168735587656290}
   - component: {fileID: 50358207846726202}
   - component: {fileID: 61902021028615044}
@@ -99,7 +100,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1536168160288526}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.67, y: -0.04, z: 0}
+  m_LocalPosition: {x: -5.84, y: -0.33, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4053162406109968}
@@ -148,7 +149,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 8
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -179,6 +180,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114093646578923186
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1536168160288526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0aaf439174498449ba39990b44f7444, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114130102538024402
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -190,29 +202,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cbc3614e206c1c4fa822b9894c16127, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 114478269236750014}
-    - {fileID: 114658044637662680}
-    - {fileID: 114847225690955570}
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes:
-    - Name: Utility
-      Entry: 10
-      Data: 0
-    - Name: Weapon
-      Entry: 10
-      Data: 1
-    - Name: _controller
-      Entry: 10
-      Data: 2
+  _controller: {fileID: 114847225690955570}
   _shootLeft: {fileID: 1125378011652502}
   _shootRight: {fileID: 1613981564955930}
+  _weapon: {fileID: 114658044637662680}
+  _utility: {fileID: 114478269236750014}
 --- !u!114 &114168735587656290
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -225,6 +219,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attribute: {fileID: 11400000, guid: 38ae57ced88d44440936a1381d355e3b, type: 2}
+  _onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Character+OnDeath, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114478269236750014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -259,23 +258,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08acee7836e50d24592f490bea54b045, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes:
-    - Name: _controller
-      Entry: 7
-      Data: 0|KeyboardController, Assembly-CSharp
-    - Name: 
-      Entry: 8
-      Data: 
   _character: {fileID: 114168735587656290}
   _rgbd: {fileID: 50358207846726202}
+  _controller: {fileID: 114093646578923186}
 --- !u!212 &212001742900230338
 SpriteRenderer:
   m_ObjectHideFlags: 1

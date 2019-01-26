@@ -13,7 +13,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField]
     private Rigidbody2D _rgbd = null;
     [SerializeField]
-    private KIController _controller = null;
+    private AController _controller = null;
 
     private Vector2 _lookDir = Vector2.zero;
 
@@ -24,13 +24,14 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        _controller.OnCollision(gameObject, collision);
+        if (_controller)
+            _controller.OnCollision(gameObject, collision);
     }
 
     // Use this for initialization
     private void Start()
     {
-        if (!_rgbd)
+        if (!_rgbd || !_controller)
             enabled = false;
         _controller.Init();
     }

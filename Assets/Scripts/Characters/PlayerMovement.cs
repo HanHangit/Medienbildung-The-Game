@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     // Use this for initialization
     private void Start()
     {
-        if (!_rgbd)
+        if (!_rgbd || !_controller)
             enabled = false;
     }
 
