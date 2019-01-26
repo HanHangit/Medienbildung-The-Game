@@ -2,12 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JumpOnCollider : MonoBehaviour {
+public class JumpOnCollider : MonoBehaviour
+{
+
+    #region Variables
 
     [SerializeField]
     private Rigidbody2D _rgbd = null;
     [SerializeField]
-    private Collider2D _collider = null;
+    private Collider2D _collider = null; 
+
+    #endregion
+
+    private void OnValidate()
+    {
+        _rgbd = GetComponent<Rigidbody2D>();
+        _collider = GetComponent<Collider2D>();
+    }
 
     private void Start()
     {
@@ -16,7 +27,7 @@ public class JumpOnCollider : MonoBehaviour {
 
     private void Update()
     {
-        if(_rgbd && _collider)
+        if (_rgbd && _collider)
         {
             if (_rgbd.velocity.y > 0)
                 _collider.enabled = false;

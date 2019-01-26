@@ -17,11 +17,6 @@ public class Projectile : MonoBehaviour {
 
     #region Unity
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Destroy(gameObject);
-    }
-
     private void Start()
     {
         _rgbd = GetComponent<Rigidbody2D>();

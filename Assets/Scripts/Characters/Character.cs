@@ -35,6 +35,7 @@ public class Character : MonoBehaviour
 
     public void ApplyDamage(int dmg)
     {
+        Debug.Log(dmg);
         _currHealth -= dmg;
         if (_currHealth <= 0)
         {
@@ -43,9 +44,14 @@ public class Character : MonoBehaviour
         }
     }
 
-    public void ApplyProjectile(Projectile proj)
+    public void ApplyDamage(Projectile proj)
     {
         ApplyDamage(proj.Attribute.Damage);
+    }
+
+    public void ApplyDamage(Character attr)
+    {
+        ApplyDamage(attr.Attribute.Damage);
     }
 
     #endregion
@@ -55,6 +61,28 @@ public class Character : MonoBehaviour
 
     [Serializable]
     private class OnDeath : UnityEvent { }
+
+    #endregion
+
+
+    #region Events
+
+    public void CalcDamage(Collider2D other)
+    {
+        Debug.Log(gameObject.name);
+        Projectile otherProj = other.gameObject.GetComponentInParent<Projectile>();
+        if (otherProj)
+            ApplyDamage(otherProj);
+
+        Character otherChar = other.gameObject.GetComponentInParent<Character>();
+        if (otherChar)
+            ApplyDamage(otherChar);
+    }
+
+    public void DestroyObject(Collider2D other)
+    {
+        Destroy(gameObject);
+    }
 
     #endregion
 }

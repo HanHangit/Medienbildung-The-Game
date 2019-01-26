@@ -7,14 +7,25 @@ using UnityEngine.Events;
 public class CollisionHandler : MonoBehaviour
 {
 
+    #region Variables
+
     [SerializeField]
     private OnCollision2D _onCollision = new OnCollision2D();
+    [SerializeField]
+    private OnTrigger2D _onTrigger = new OnTrigger2D();
+
+    #endregion
 
     #region Unity
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         _onCollision.Invoke(collision);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        _onTrigger.Invoke(collision);
     }
 
     #endregion
@@ -24,6 +35,8 @@ public class CollisionHandler : MonoBehaviour
 
     [Serializable]
     private class OnCollision2D : UnityEvent<Collision2D> { }
+    [Serializable]
+    private class OnTrigger2D : UnityEvent<Collider2D> { }
 
     #endregion
 
@@ -35,13 +48,10 @@ public class CollisionHandler : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void ApplyDamage(Collision2D collision)
+    public void DestroyOnPlayerCollision(Collision2D collision)
     {
-        Character myChar = GetComponent<Character>();
-        Projectile otherProj = collision.gameObject.GetComponent<Projectile>();
-
-        if(myChar && otherProj)
-            myChar.ApplyProjectile(otherProj);
+        if (collision.gameObject.tag == "Player")
+            Destroy(gameObject);
     }
 
     #endregion

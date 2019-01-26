@@ -15,7 +15,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField]
     private AController _controller = null;
 
-    private Vector2 _lookDir = Vector2.zero;
+    private Vector2 _lookDir = Vector2.left;
 
     #endregion
 

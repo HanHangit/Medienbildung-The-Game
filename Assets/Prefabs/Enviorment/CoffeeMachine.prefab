@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4500674914893702}
   - component: {fileID: 212674039270151186}
   - component: {fileID: 61785644499109562}
-  - component: {fileID: 114488254152545622}
   m_Layer: 11
   m_Name: CoffeeMachine
   m_TagString: Untagged
@@ -50,7 +49,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1685598075286236}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 668a6141ab4cda64196b4e38d967174d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -67,19 +66,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.85, y: 0.1072464}
   m_EdgeRadius: 0
---- !u!114 &114488254152545622
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1685598075286236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40531645e67cf16489f4a6c0d3a7b8cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rgbd: {fileID: 0}
-  _collider: {fileID: 0}
 --- !u!212 &212674039270151186
 SpriteRenderer:
   m_ObjectHideFlags: 1
