@@ -21,7 +21,7 @@ public class FloorKIController : AController
 
     public override void Init()
     {
-         _currMove = new Vector2(Random.Range(-10, 10), 0);
+         _currMove = new Vector2(-1, 0);
         _currMove.Normalize();
     }
 
