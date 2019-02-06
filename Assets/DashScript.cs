@@ -12,12 +12,13 @@ public class DashScript : MonoBehaviour
     [SerializeField]
     private float _chargeWidth = 1;
     private float _charge = 0;
-    private float _maxCharge = 3;
+    [SerializeField]
+    private float _chargeTime = 1;
 
     void Update()
     {
-        _charge = Mathf.Min(_charge + Time.deltaTime, _maxCharge);
-        if (_charge >= _maxCharge)
+        _charge = Mathf.Min(_charge + Time.deltaTime, _chargeTime);
+        if (_charge >= _chargeTime)
         {
             if (_controller)
             {

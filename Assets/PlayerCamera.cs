@@ -20,6 +20,8 @@ public class PlayerCamera : MonoBehaviour
 
     #endregion
 
+    #region Unity
+
     private void Start()
     {
         if (!_camera)
@@ -45,11 +47,11 @@ public class PlayerCamera : MonoBehaviour
                 _pos.y += diff.y + _offsetY;
             if (diff.y > _offsetY)
                 _pos.y += diff.y - _offsetY;
-            Debug.Log("C: " + _camera.transform.position);
-            Debug.Log("P: " + _pos);
 
             _camera.transform.position = _pos /*Vector3.Lerp(_camera.transform.position, _pos, 0.1f)*/;
         }
-    }
+    } 
+
+    #endregion
 
 }

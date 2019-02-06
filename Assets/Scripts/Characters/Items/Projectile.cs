@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour {
+public class Projectile : MonoBehaviour
+{
 
     #region Variables
 
@@ -35,7 +36,7 @@ public class Projectile : MonoBehaviour {
 
     public ProjectileAttribute Attribute => _attribute;
 
-    public static GameObject CreateProjectile(GameObject prefab,Vector2 pos, Vector2 dir, float speed)
+    public static GameObject CreateProjectile(GameObject prefab, Vector2 pos, Vector2 dir, float speed)
     {
         GameObject result = Instantiate(prefab);
         result.transform.position = pos;
@@ -45,7 +46,17 @@ public class Projectile : MonoBehaviour {
         comp._speed = speed;
 
         return result;
-    } 
+    }
+
+    public void DestroyOnCollision(Collider2D other)
+    {
+        Character chr = other.gameObject.GetComponentInParent<Character>();
+        if (chr)
+        {
+            chr.ApplyDamage(this);
+            Destroy(gameObject);
+        }
+    }
 
     #endregion
 

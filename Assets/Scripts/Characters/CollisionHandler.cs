@@ -25,6 +25,7 @@ public class CollisionHandler : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("Log");
         _onTrigger.Invoke(collision);
     }
 
