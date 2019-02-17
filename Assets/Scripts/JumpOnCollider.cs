@@ -7,9 +7,11 @@ public class JumpOnCollider : MonoBehaviour
 
     #region Variables
 
+    [SerializeField]
     private Rigidbody2D _rgbd = null;
     [SerializeField]
     private Collider2D _collider = null;
+    private bool _borderCollision = false;
 
     #endregion
 
@@ -22,12 +24,12 @@ public class JumpOnCollider : MonoBehaviour
     private void Awake()
     {
         _collider = _collider ?? GetComponent<Collider2D>();
-        
+
     }
 
     private void Start()
     {
-        _rgbd = GameManager.Player.GetComponent<Rigidbody2D>();
+        _rgbd = _rgbd ?? GetComponentInParent<Rigidbody2D>();
         //GameManager.Instance?.OnPlayerRegistered.AddListener((c) => _rgbd = c.GetComponent<Rigidbody2D>());
     }
 
@@ -35,7 +37,7 @@ public class JumpOnCollider : MonoBehaviour
     {
         if (_rgbd)
         {
-            if (_rgbd.velocity.y > 0)
+            if (_rgbd.velocity.y > 0.1f && !_borderCollision)
                 _collider.enabled = false;
             else
                 _collider.enabled = true;

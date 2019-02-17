@@ -34,7 +34,6 @@ public class Character : MonoBehaviour
 
     public void ApplyDamage(int dmg)
     {
-        Debug.Log(dmg);
         _currHealth -= dmg;
         if (_currHealth <= 0)
         {
@@ -68,7 +67,6 @@ public class Character : MonoBehaviour
 
     public void CalcDamage(Collider2D other)
     {
-        Debug.Log(gameObject.name);
         Projectile otherProj = other.gameObject.GetComponentInParent<Projectile>();
         if (otherProj)
             ApplyDamage(otherProj);

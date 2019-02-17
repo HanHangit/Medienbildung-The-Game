@@ -22,9 +22,9 @@ TagManager:
   - JumpCollider
   - Player
   - DamageCollider
-  - 
-  - 
-  - 
+  - BorderCollider
+  - CameraCollider
+  - Collectable
   - 
   - 
   - 
