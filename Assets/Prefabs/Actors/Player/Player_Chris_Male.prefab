@@ -93,22 +93,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1599632233285836
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4054516629012050}
-  - component: {fileID: 114887841499418438}
-  m_Layer: 12
-  m_Name: Spawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1672733569467446
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,20 +143,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4319731980637684}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4054516629012050
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1599632233285836}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.62, y: 0.22, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4319731980637684}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4086494473135512
 Transform:
@@ -194,14 +165,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1672733569467446}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.8, y: -1.76, z: 0}
+  m_LocalPosition: {x: -7.566162, y: -1.8743999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4868397569618384}
   - {fileID: 4524919872398178}
   - {fileID: 4086494473135512}
   - {fileID: 4734610535273820}
-  - {fileID: 4054516629012050}
   - {fileID: 4707367532963572}
   - {fileID: 4036564531350980}
   m_Father: {fileID: 0}
@@ -231,7 +201,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4319731980637684}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4734610535273820
 Transform:
@@ -513,20 +483,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Character+OnDeath, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
---- !u!114 &114887841499418438
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1599632233285836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78ae11e64480e524f820b463907d960d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spawnObjects:
-  - {fileID: 1749174280483814, guid: 7efa6ef4a3fd94d42b8e8e7ce7eed7f3, type: 2}
-  _spawnTime: 2
 --- !u!114 &114929788743245218
 MonoBehaviour:
   m_ObjectHideFlags: 1
