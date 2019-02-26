@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChinaKI : AController {
+public class ChinaKI : AController, Dialogue.ITriggerAfterDialogue {
 
     [SerializeField]
     private EnemyMovement _movement;
@@ -16,6 +16,8 @@ public class ChinaKI : AController {
     private float _time;
     [SerializeField]
     private int _damageValue = 10;
+	private bool _isStarting = false;
+
 
     public override Vector2 GetMove()
     {
@@ -29,14 +31,15 @@ public class ChinaKI : AController {
             var character = collision.gameObject.GetComponent<Character>();
             character.ApplyDamage(_damageValue);
         }
-    }
+		if (collision.gameObject.tag == "Obstacle")
+		{
+			CollisionTriggered();
+		}
+	}
 
-    private void OnCollisionEnter2D(Collision2D collision)
+	private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Obstacle")
-        {
-            CollisionTriggered();
-        }
+
     }
 
     private void Start()
@@ -48,11 +51,15 @@ public class ChinaKI : AController {
     private void PlayerRegistered(Character arg0)
     {
         _player = arg0;
-        CollisionTriggered();
+		if(!_isStarting)
+			CollisionTriggered();
     }
 
     private void Update()
     {
+		if (!_isStarting)
+			return;
+
         _time += Time.deltaTime;
      
        _movement.IncreseVelocity(_speedCurve.Evaluate(_time));
@@ -61,8 +68,7 @@ public class ChinaKI : AController {
 
     public void CollisionTriggered()
     {
-
-        _direction = _player.transform.position - this.transform.position;
+		_direction = _player.transform.position - this.transform.position;
         if (_direction.x > 0)
             _direction = Vector2.right;
         else
@@ -72,9 +78,14 @@ public class ChinaKI : AController {
         _time = 0;
 
     }
+	public void DialogueEnd()
+	{
+		_isStarting = true;
+		gameObject.SetActive(true);
+		CollisionTriggered();
+	}
 
-
-    public override bool IsAction1()
+	public override bool IsAction1()
     {
         return false;
     }
@@ -88,5 +99,6 @@ public class ChinaKI : AController {
     {
         return false;
     }
+
 
 }

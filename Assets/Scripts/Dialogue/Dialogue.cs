@@ -24,6 +24,9 @@ public class Dialogue : MonoBehaviour {
     [SerializeField]
     private bool _onceOnlyTrigger = false;
 
+	[SerializeField]
+	private List<GameObject> _triggerObjs;
+
     private bool _isDialogueTriggered = false;
     private int _index;
 
@@ -81,5 +84,18 @@ public class Dialogue : MonoBehaviour {
             _playerMovement.EnableControlling();
 
         _parentObj.gameObject.SetActive(false);
+
+		foreach (var item in _triggerObjs)
+		{
+			var triggerElement = item.GetComponent<ITriggerAfterDialogue>();
+			if (triggerElement != null)
+				triggerElement.DialogueEnd();
+			else
+				item.gameObject.SetActive(true);
+		}
     }
+	public interface ITriggerAfterDialogue
+	{
+		void DialogueEnd();
+	}
 }
