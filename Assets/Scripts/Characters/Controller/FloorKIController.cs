@@ -12,6 +12,23 @@ public class FloorKIController : AController
     #endregion
 
 
+    #region Unity
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "CameraBorder")
+            Destroy(gameObject);
+    }
+
+    public void DestroyOnTrigger(Collider2D collision)
+    {
+        Destroy(gameObject);
+    }
+
+    #endregion
+
+
     #region Public
 
     public override Vector2 GetMove()
@@ -21,7 +38,7 @@ public class FloorKIController : AController
 
     public override void Init()
     {
-         _currMove = new Vector2(Random.Range(-10, 10), 0);
+        _currMove = new Vector2(-1, 0);
         _currMove.Normalize();
     }
 

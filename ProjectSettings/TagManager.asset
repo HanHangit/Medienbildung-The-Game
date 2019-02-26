@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Obstacle
+  - CameraBorder
   layers:
   - Default
   - TransparentFX
@@ -21,9 +22,9 @@ TagManager:
   - JumpCollider
   - Player
   - DamageCollider
-  - 
-  - 
-  - 
+  - BorderCollider
+  - CameraCollider
+  - Collectable
   - 
   - 
   - 

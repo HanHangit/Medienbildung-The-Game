@@ -28,10 +28,16 @@ public class PlayerMovement : MonoBehaviour
 
     #region Unity
 
+    private void Awake()
+    {
+        GameManager.Player = GetComponent<Character>();
+    }
+
     private void Start()
     {
         if (!_rgbd || !_controller)
             enabled = false;
+        GameManager.Instance.PlayerRegistered(GetComponent<Character>());
     }
 
     private void Update()

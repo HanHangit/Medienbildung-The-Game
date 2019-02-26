@@ -13,4 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 100
   Speed: 400
-  JumpForce: 1200
+  JumpForce: 800
+  Damage: 0
