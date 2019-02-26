@@ -42,6 +42,7 @@ public class ChinaKI : AController {
     private void Start()
     {
         GameManager.Instance.OnPlayerRegistered.AddListener(PlayerRegistered);
+        gameObject.SetActive(false);
     }
 
     private void PlayerRegistered(Character arg0)
