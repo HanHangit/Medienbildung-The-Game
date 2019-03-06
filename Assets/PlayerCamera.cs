@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,16 +19,31 @@ public class PlayerCamera : MonoBehaviour
     private Vector2 _screenSize;
     private Vector2 _pos;
 
-    #endregion
+	#endregion
 
-    #region Unity
+	#region Unity
 
-    private void Start()
+	private void Awake()
+	{
+		GameManager.Instance.OnPlayerRegistered.AddListener(PlayerRegistered);
+	}
+
+	private void PlayerRegistered(Character arg0)
+	{
+		_follow = arg0.gameObject;
+		if (!_camera)
+			_camera = GetComponent<Camera>();
+
+		_camera.transform.position = _follow.transform.position + new Vector3(0, 0, -10);
+
+	}
+
+	private void Start()
     {
         if (!_camera)
             _camera = GetComponent<Camera>();
-        if (_camera)
-            _camera.transform.position = _follow.transform.position + new Vector3(0, 0, -10);
+
+          
     }
 
     private void Update()

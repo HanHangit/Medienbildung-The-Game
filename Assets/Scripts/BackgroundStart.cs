@@ -26,7 +26,6 @@ public class BackgroundStart : MonoBehaviour {
 
     private void FadingIntroCompleted(GameObject arg0)
     {
-        Debug.Log("Bin hier driN");
         _fadeText.StartFading();
         _fadeText.OnFadingFinished.AddListener(FadingTextCompleted);
     }

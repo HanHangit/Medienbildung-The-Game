@@ -27,13 +27,31 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    #endregion
+	#endregion
+
+	[SerializeField]
+	private Character _malePrefab;
+	[SerializeField]
+	private Character _femalePrefab;
+	[SerializeField]
+	private Transform _spawnPos;
 
 
-    public class PlayerRegister : UnityEngine.Events.UnityEvent<Character> { }
+	private void Start()
+	{
+		int playerPrefabIndex = PlayerPrefs.GetInt("Player");
+
+		if (playerPrefabIndex == 0)
+			Instantiate(_malePrefab, _spawnPos.position, Quaternion.identity, null);
+		else
+			Instantiate(_femalePrefab, _spawnPos.position, Quaternion.identity, null);
+
+		
+	}
+
+
+	public class PlayerRegister : UnityEngine.Events.UnityEvent<Character> { }
     public PlayerRegister OnPlayerRegistered = new PlayerRegister();
-
-    public static Character Player { get; set; }
 
     public void PlayerRegistered(Character character)
     {

@@ -22,13 +22,16 @@ public class ControllerPlayerMovement : MonoBehaviour {
     }
 
 
-    private void Start()
+    private void Awake()
     {
+		if (GameManager.Instance == null)
+			Debug.Log("Null");
         GameManager.Instance.OnPlayerRegistered.AddListener(PlayerRegistered);
     }
 
     private void PlayerRegistered(Character arg0)
     {
+		Debug.Log("PlayerControllerMOvement");
         if(arg0.gameObject.tag == ("Player"))
         {
             _playerMove = arg0.GetComponent<PlayerMovement>();
