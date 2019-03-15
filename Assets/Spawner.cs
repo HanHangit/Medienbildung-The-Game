@@ -8,6 +8,7 @@ public class Spawner : MonoBehaviour {
 
     [SerializeField]
     private GameObject _spawnObject = null;
+    private GameObject _player = null;
     [SerializeField]
     private float _spawnTimeMax = 5f;
     [SerializeField]
@@ -18,11 +19,18 @@ public class Spawner : MonoBehaviour {
     #endregion
 
 
-    #region MyRegion
+    #region Unity
+
+    private void Awake()
+    {
+        GameManager.Instance.OnPlayerRegistered.AddListener(SetPlayer);
+    }
 
     // Update is called once per frame
     void Update()
     {
+        transform.position = new Vector3(_player.transform.position.x + 10, transform.position.y);
+
         _timer += Time.deltaTime;
         if(_timer >= _maxTimer && _spawnObject)
         {
@@ -31,6 +39,17 @@ public class Spawner : MonoBehaviour {
             _maxTimer = Random.Range(_spawnTimeMin, _spawnTimeMax);
             _timer = 0;
         }
-    } 
+    }
+
+    #endregion
+
+
+    #region Events
+
+    private void SetPlayer(Character c)
+    {
+        _player = c.gameObject;
+    }
+
     #endregion
 }

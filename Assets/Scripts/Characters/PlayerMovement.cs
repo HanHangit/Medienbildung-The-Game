@@ -41,6 +41,21 @@ public class PlayerMovement : MonoBehaviour
             SetMoving();
     }
 
+    private void FixedUpdate()
+    {
+        RaycastHit2D hit;
+        if (_rgbd.velocity.y < 0 && (hit = Physics2D.Raycast(transform.position + Vector3.down, Vector2.down, -(int)_rgbd.velocity.y * Time.deltaTime, 1 << 11)))
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y - hit.distance, 0);
+
+            while (Physics2D.OverlapPoint(transform.position + new Vector3(0, -1, 0), 1 << 11))
+                transform.position += new Vector3(0, 0.1f);
+
+            _rgbd.velocity = Vector2.zero;
+            Debug.Log("Hit");
+        }
+    }
+
     private void SetMoving()
     {
         Vector2 move = _controller.GetMove() * _character.Attribute.Speed * Time.deltaTime;
@@ -72,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
 
     #region Public
 
-    public Vector2 LookDir => new Vector2(_lookDir.x,0);
+    public Vector2 LookDir => new Vector2(_lookDir.x, 0);
     public AController Controller => _controller;
 
     #endregion
